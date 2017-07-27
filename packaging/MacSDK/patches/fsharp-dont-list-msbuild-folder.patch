@@ -1,0 +1,25 @@
+From 2031b16a31754fb1bdb5a19914ca4b8bde37539f Mon Sep 17 00:00:00 2001
+From: nosami <jasonimison@gmail.com>
+Date: Thu, 27 Jul 2017 23:04:29 +0100
+Subject: [PATCH] Don't list /msbuild after installing. It doesn't exist
+
+---
+ Makefile | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/Makefile b/Makefile
+index 8a38e1a..ac5d0df 100644
+--- a/Makefile
++++ b/Makefile
+@@ -98,7 +98,7 @@ install:
+ 	$(MAKE) -C mono/FSharp.Core TargetDotnetProfile=monoandroid10+monotouch10+xamarinios10 install
+ 	$(MAKE) -C mono/FSharp.Core TargetDotnetProfile=xamarinmacmobile install
+ 	echo "------------------------------ INSTALLED FILES --------------"
+-	ls -xlR $(DESTDIR)$(monodir)/fsharp $(DESTDIR)$(monodir)/msbuild $(DESTDIR)$(monodir)/gac/FSharp* $(DESTDIR)$(monodir)/Microsoft*
++	ls -xlR $(DESTDIR)$(monodir)/fsharp $(DESTDIR)$(monodir)/gac/FSharp* $(DESTDIR)$(monodir)/Microsoft*
+ 
+ dist:
+ 	-rm -r fsharp-$(DISTVERSION) fsharp-$(DISTVERSION).tar.bz2
+-- 
+2.8.0
+
